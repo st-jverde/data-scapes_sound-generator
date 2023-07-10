@@ -3,12 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <title>Tone.js Demo</title>
+    <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.jsdelivr.net/npm/tone@latest/build/Tone.min.js"></script>
   </head>
   <body>
-    <button id="startButton">Play</button>
-    <button id="stopButton">Stop</button>
+    <div class="container">
+      <h1>Data Scapes | Sound Generator</h1>
+      <div id="data">
+        <label for="happy-slider">Happy:</label>
+        <input type="range" id="happy-slider" min="0" max="10" value="5">
+        <input type="number" id="happy-number" min="0" max="10" value="5" readonly>
+        
+        <label for="confidence-slider">Confidence:</label>
+        <input type="range" id="confidence-slider" min="0" max="10">
+        <input type="number" id="confidence-number" min="0" max="10" value="5" readonly>
+        
+        <label for="calm-slider">Calm:</label>
+        <input type="range" id="calm-slider" min="0" max="10" value="5">
+        <input type="number" id="calm-number" min="0" max="10" value="5" readonly>
+        
+        <label for="age-slider">Age:</label>
+        <input type="range" id="age-slider" min="0" max="10" value="5">
+        <input type="number" id="age-number" min="0" max="10" value="5" readonly>
+        
+        <label for="other-input">Other:</label>
+        <input type="range" id="other-slider" min="0" max="10" value="5">
+        <input type="number" id="other-input" min="0" max="10" value="5" readonly>
+      </div>
 
+      <div id="controller">
+        <button id="startButton">Play</button>
+        <button id="stopButton">Stop</button>
+      </div>      
+    </div>
     <!-- <a href="./granular.html">Granular</a> -->
 
     <script type="module" src="./app.js"></script>

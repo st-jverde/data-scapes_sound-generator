@@ -1,3 +1,8 @@
+import { initializeSliders } from './components/sliders.js';
+
+// Call the initializeSliders function to initialize the sliders
+initializeSliders();
+
 import { grainSampler } from './instruments/grainSampler.js';
 import { rhythmLoaded } from './instruments/rhythm.js';
 import { sineSynth } from './instruments/sineSynth.js';
@@ -30,7 +35,7 @@ const sineSynthLoop = new Tone.Loop(time => {
   let note = melodies[melodyIndex][noteIndex];
   sineSynth.triggerAttackRelease(note, '32n', time);
   noteIndex = (noteIndex + 1) % melodies[melodyIndex].length; // Cycle through the notes in the melody
-}, '6n');
+}, '8n');
 
 
 const triangleSynthLoop = new Tone.Loop(time => {
@@ -41,7 +46,7 @@ startButton.addEventListener('click', async () => {
   await Tone.start();
   Tone.Transport.start();
   // Add the loops to the Transport
-  // grainSamplerLoop.start(0);
+  grainSamplerLoop.start(0);
   rhythmLoop.start(0);
   sineSynthLoop.start(0);
   triangleSynthLoop.start(0);
